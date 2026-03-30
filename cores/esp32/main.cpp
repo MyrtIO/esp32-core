@@ -2,6 +2,7 @@
 #include "freertos/task.h"
 #include "esp_task_wdt.h"
 #include "Arduino.h"
+#include "myrtio/core.h"
 #if (ARDUINO_USB_CDC_ON_BOOT|ARDUINO_USB_MSC_ON_BOOT|ARDUINO_USB_DFU_ON_BOOT) && !ARDUINO_USB_MODE
 #include "USB.h"
 #if ARDUINO_USB_MSC_ON_BOOT
@@ -39,7 +40,8 @@ __attribute__((weak)) size_t getArduinoLoopTaskStackSize(void) {
 
 void loopTask(void *pvParameters)
 {
-    setup();
+    app_start();
+
     for(;;) {
 #if CONFIG_FREERTOS_UNICORE
         yieldIfNecessary();
@@ -47,8 +49,7 @@ void loopTask(void *pvParameters)
         if(loopTaskWDTEnabled){
             esp_task_wdt_reset();
         }
-        loop();
-        if (serialEventRun) serialEventRun();
+        delay(1000);
     }
 }
 

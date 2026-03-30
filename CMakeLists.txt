@@ -69,6 +69,10 @@ set(CORE_SRCS
   cores/esp32/wiring_shift.c
   cores/esp32/WMath.cpp
   cores/esp32/WString.cpp
+  cores/esp32/myrtio/clock.c
+  cores/esp32/myrtio/log.c
+  cores/esp32/myrtio/pin.c
+  cores/esp32/myrtio/sys.c
   )
 
 set(LIBRARY_SRCS

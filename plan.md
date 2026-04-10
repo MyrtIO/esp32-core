@@ -106,14 +106,14 @@ Arduino uses `setup()` + `loop()`. MyrtIO uses a single function:
 
 ```c
 // User implements this. Called once from a FreeRTOS task.
-void app_start(void);
+void myrtio_main(void);
 ```
 
 The framework's internal `app_main()` (ESP-IDF entry):
 1. Initializes chip (CPU freq, NVS, PSRAM)
 2. Creates a FreeRTOS task
-3. Calls `app_start()`
-4. When `app_start()` returns, the task idles (or optionally deletes itself)
+3. Calls `myrtio_main()`
+4. When `myrtio_main()` returns, the task idles (or optionally deletes itself)
 
 No hidden `loop()`. The user writes their own loop or uses RTOS tasks directly.
 
@@ -124,7 +124,7 @@ Minimal user program:
 #include <myrtio/pin.h>
 #include <myrtio/clock.h>
 
-void app_start(void) {
+void myrtio_main(void) {
     pin_set_mode(2, PIN_OUTPUT);
     for (;;) {
         pin_write(2, PIN_HIGH);

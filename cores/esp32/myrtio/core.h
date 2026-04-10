@@ -49,7 +49,7 @@ typedef void (*callback_t)(void *arg);
 extern "C" {
 #endif
 
-void app_start(void);
+void myrtio_main(void);
 
 #ifdef __cplusplus
 }

@@ -4,3 +4,4 @@
 #include "myrtio/clock.h"
 #include "myrtio/pin.h"
 #include "myrtio/sys.h"
+#include "myrtio/serial.h"

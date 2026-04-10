@@ -45,18 +45,14 @@ set(CORE_SRCS
   cores/esp32/esp32-hal-touch.c
   cores/esp32/esp32-hal-uart.c
   cores/esp32/esp32-hal-rmt.c
-  cores/esp32/Esp.cpp
+  # cores/esp32/Esp.cpp
   cores/esp32/FunctionalInterrupt.cpp
   cores/esp32/HardwareSerial.cpp
-  cores/esp32/IPAddress.cpp
-  cores/esp32/IPv6Address.cpp
   cores/esp32/libb64/cdecode.c
   cores/esp32/libb64/cencode.c
   cores/esp32/main.cpp
   cores/esp32/MD5Builder.cpp
-  cores/esp32/Print.cpp
   cores/esp32/stdlib_noniso.c
-  cores/esp32/Stream.cpp
   cores/esp32/StreamString.cpp
   cores/esp32/Tone.cpp
   cores/esp32/HWCDC.cpp
@@ -68,10 +64,10 @@ set(CORE_SRCS
   cores/esp32/wiring_pulse.c
   cores/esp32/wiring_shift.c
   cores/esp32/WMath.cpp
-  cores/esp32/WString.cpp
   cores/esp32/myrtio/clock.c
   cores/esp32/myrtio/log.c
   cores/esp32/myrtio/pin.c
+  cores/esp32/myrtio/serial.c
   cores/esp32/myrtio/sys.c
   )
 
